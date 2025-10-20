@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Do Together</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #fdf7f1, #ffeef3);
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 0.9s ease-in-out forwards;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* Floating pastel blob background */
+    .blob {
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      background: #ffd1dc;
+      filter: blur(80px);
+      opacity: 0.4;
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite alternate;
+      z-index: -1;
+    }
+
+    .blob2 {
+      background: #ffc6eb;
+      top: 50%;
+      left: 70%;
+      animation-duration: 7s;
+    }
+
+    .blob3 {
+      background: #ffe9a7;
+      top: 20%;
+      left: -10%;
+      animation-duration: 8s;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0px) translateX(0); }
+      to { transform: translateY(30px) translateX(20px); }
+    }
+
+    header {
+      padding: 80px 20px 50px;
+    }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 4rem;
+      font-weight: 400;
+      color: #ff8a8a;
+      margin-bottom: 5px;
+    }
+
+    p.subtitle {
+      font-size: 1.2rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto 30px auto;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+
+    a.button {
+      text-decoration: none;
+      padding: 12px 24px;
+      background: #ffd1dc;
+      border-radius: 8px;
+      font-size: 1rem;
+      color: #333;
+      transition: transform 0.25s ease, background 0.2s ease, box-shadow 0.25s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    a.button:hover {
+      transform: translateY(-6px) scale(1.03);
+      background: #ffb6c1;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+
+    section {
+      max-width: 700px;
+      padding: 20px;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #ff8a8a;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    footer {
+      font-size: 0.9rem;
+      color: #999;
+      padding: 30px 0;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Animated pastel blobs -->
+  <div class="blob" style="top: 10%; left: 10%;"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+
+  <header>
+    <h1>Do Together</h1>
+    <p class="subtitle">A playful web app that helps couples, friends, and individuals find fun things to do — together or alone.</p>
+    <div class="button-group">
+      <a href="#" class="button">What's the move?</a>
+    </div>
+  </header>
+
+  <section id="about-project">
+    <h2>About This Project</h2>
+    <p>
+      Do Together started as a simple idea: sometimes deciding what to do is harder than doing it. This will evolve into a full-stack app that generates activity ideas with mood and budget filters, allowing users to save and share favorites.
+    </p>
+  </section>
+
+  <section id="about-me">
+    <h2>About the Creator</h2>
+    <p>
+      Hi! I'm Isabelle, a creative technologist who loves blending design, digital experiences, and everyday life moments. This project is a way for me to explore full-stack development while building something cozy and fun.
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Do Together · Built with 🩷
+  </footer>
+
+</body>
+</html>
