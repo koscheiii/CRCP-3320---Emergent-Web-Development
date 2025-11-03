@@ -102,14 +102,51 @@
       box-shadow: 0 8px 16px rgba(0,0,0,0.15);
     }
 
-    #activity {
-      font-size: 1.5rem;
-      color: #444;
-      margin-top: 15px;
+    .filters {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    label {
       font-weight: 500;
-      transition: opacity 0.6s ease-in-out;
-      opacity: 0; 
-      min-height: 40px;
+      color: #555;
+    }
+
+    select {
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid #ffd1dc;
+      background: #fffafc;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      color: #333;
+      transition: box-shadow 0.3s ease, transform 0.2s ease;
+    }
+
+    select:hover {
+      box-shadow: 0 3px 8px rgba(255, 182, 193, 0.3);
+      transform: scale(1.03);
+    }
+
+    #activity {
+      font-size: 1.4rem;
+      color: #555;
+      margin-top: 25px;
+      padding: 18px 28px;
+      font-weight: 500;
+      background: rgba(255, 209, 220, 0.55);
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      display: inline-block;
+      transition: opacity 0.6s ease-in-out, transform 0.4s ease;
+      opacity: 0;
+      transform: translateY(10px);
+      backdrop-filter: blur(8px);
+      min-height: 50px;
     }
 
     section {
@@ -142,12 +179,39 @@
   <header>
     <h1>Do Together</h1>
     <p class="subtitle">A web app that helps couples, friends, and individuals find fun things to do whether it's together or alone.</p>    
+  
+    <div class="filters">
+      <label for="mood">Mood:</label>
+      <select id="mood">
+        <option value="any">Any</option>
+        <option value="chill">Chill</option>
+        <option value="creative">Creative</option>
+        <option value="energetic">Energetic</option>
+      </select>
+
+      <label for="group">Group:</label>
+      <select id="group">
+        <option value="any">Any</option>
+        <option value="solo">Solo</option>
+        <option value="couple">Couple</option>
+        <option value="friends">Friends</option>
+      </select>
+    </div>
+
+
+    <div class="button-group">
+      <a href="#" class="button" id="moveButton">What's the move?</a>
+    </div>
+    <p id="activity"></p>
+  
+    
+
+  
+  
   </header>
 
-  <div class="button-group">
-    <a href="#" class="button" id="moveButton">What's the move?</a>
-  </div>
-  <p id="activity"></p>
+
+
 
   <script>
   const activities = [
@@ -168,17 +232,15 @@
 
   button.addEventListener("click", (event) => {
     event.preventDefault();
-
-    // Fade out the current text first
     activityText.style.opacity = 0;
+    activityText.style.transform = "translateY(10px)";
 
-    // After fade-out, change text and fade back in
     setTimeout(() => {
       const random = activities[Math.floor(Math.random() * activities.length)];
       activityText.textContent = random;
-      activityText.style.transition = "opacity 0.6s ease-in-out";
       activityText.style.opacity = 1;
-    }, 300); // Adjust timing for smoother fade
+      activityText.style.transform = "translateY(0)";
+    }, 300);
   });
   </script>
 
