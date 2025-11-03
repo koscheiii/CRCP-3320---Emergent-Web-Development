@@ -102,6 +102,16 @@
       box-shadow: 0 8px 16px rgba(0,0,0,0.15);
     }
 
+    #activity {
+      font-size: 1.5rem;
+      color: #444;
+      margin-top: 15px;
+      font-weight: 500;
+      transition: opacity 0.6s ease-in-out;
+      opacity: 0; 
+      min-height: 40px;
+    }
+
     section {
       max-width: 700px;
       padding: 20px;
@@ -131,11 +141,49 @@
 
   <header>
     <h1>Do Together</h1>
-    <p class="subtitle">A web app that helps couples, friends, and individuals find fun things to do whether it's together or alone.</p>
-    <div class="button-group">
-      <a href="#" class="button">What's the move?</a>
-    </div>
+    <p class="subtitle">A web app that helps couples, friends, and individuals find fun things to do whether it's together or alone.</p>    
   </header>
+
+  <div class="button-group">
+    <a href="#" class="button" id="moveButton">What's the move?</a>
+  </div>
+  <p id="activity"></p>
+
+  <script>
+  const activities = [
+    "Go for coffee ☕",
+    "Movie night 🎬",
+    "Take a walk 🌳",
+    "Cook together 🍝",
+    "Try a new restaurant 🍣",
+    "Board game night 🎲",
+    "Visit a museum 🖼️",
+    "Bake cookies 🍪",
+    "Have a picnic 🌼",
+    "Do a mini photoshoot 📸"
+  ];
+
+  const button = document.getElementById("moveButton");
+  const activityText = document.getElementById("activity");
+
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    // Fade out the current text first
+    activityText.style.opacity = 0;
+
+    // After fade-out, change text and fade back in
+    setTimeout(() => {
+      const random = activities[Math.floor(Math.random() * activities.length)];
+      activityText.textContent = random;
+      activityText.style.transition = "opacity 0.6s ease-in-out";
+      activityText.style.opacity = 1;
+    }, 300); // Adjust timing for smoother fade
+  });
+  </script>
+
+
+
 
   <section id="about-project">
     <h2>About This Project</h2>
