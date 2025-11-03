@@ -102,35 +102,35 @@
       box-shadow: 0 8px 16px rgba(0,0,0,0.15);
     }
 
-    .filters {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
+      .filters {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+      }
 
-    label {
-      font-weight: 500;
-      color: #555;
-    }
+      label {
+        font-weight: 500;
+        color: #555;
+      }
 
-    select {
-      padding: 8px 14px;
-      border-radius: 8px;
-      border: 1px solid #ffd1dc;
-      background: #fffafc;
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.95rem;
-      color: #333;
-      transition: box-shadow 0.3s ease, transform 0.2s ease;
-    }
+      select {
+        padding: 8px 14px;
+        border-radius: 8px;
+        border: 1px solid #ffd1dc;
+        background: #fffafc;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.95rem;
+        color: #333;
+        transition: box-shadow 0.3s ease, transform 0.2s ease;
+      }
 
-    select:hover {
-      box-shadow: 0 3px 8px rgba(255, 182, 193, 0.3);
-      transform: scale(1.03);
-    }
+      select:hover {
+        box-shadow: 0 3px 8px rgba(255, 182, 193, 0.3);
+        transform: scale(1.03);
+      }
 
     #activity {
       font-size: 1.4rem;
@@ -146,7 +146,7 @@
       opacity: 0;
       transform: translateY(10px);
       backdrop-filter: blur(8px);
-      min-height: 50px;
+      min-height: 40px;
     }
 
     section {
@@ -202,46 +202,69 @@
     <div class="button-group">
       <a href="#" class="button" id="moveButton">What's the move?</a>
     </div>
-    <p id="activity"></p>
-  
-    
-
-  
-  
+    <p id="activity"></p>  
   </header>
 
 
-
-
   <script>
-  const activities = [
-    "Go for coffee ☕",
-    "Movie night 🎬",
-    "Take a walk 🌳",
-    "Cook together 🍝",
-    "Try a new restaurant 🍣",
-    "Board game night 🎲",
-    "Visit a museum 🖼️",
-    "Bake cookies 🍪",
-    "Have a picnic 🌼",
-    "Do a mini photoshoot 📸"
-  ];
+    const activities = {
+      chill: {
+        solo: ["Read a book 📖", "Watch a cozy movie 🍿", "Take a walk 🌳"],
+        couple: ["Cook dinner together 🍝", "Picnic at the park 🌼", "Movie night 🎬"],
+        friends: ["Board game night 🎲", "Boba run 🧋", "Craft night ✂️"]
+      },
+      creative: {
+        solo: ["Paint something 🎨", "Write in your journal 📝", "Edit photos 📸"],
+        couple: ["DIY art project 🖌️", "Make a playlist 🎧", "Decorate cookies 🍪"],
+        friends: ["Film a TikTok 🎥", "Host a photo challenge 📷", "Make friendship bracelets 💖"]
+      },
+      energetic: {
+        solo: ["Dance break 💃", "Go on a jog 🏃‍♀️", "Clean and vibe 🧹"],
+        couple: ["Mini road trip 🚗", "Go bowling 🎳", "Play Just Dance 🕺"],
+        friends: ["Karaoke night 🎤", "Outdoor volleyball 🏐", "Amusement park 🎡"]
+      }
+    };
 
-  const button = document.getElementById("moveButton");
-  const activityText = document.getElementById("activity");
+    const button = document.getElementById("moveButton");
+    const activityText = document.getElementById("activity");
+    const moodSelect = document.getElementById("mood");
+    const groupSelect = document.getElementById("group");
 
-  button.addEventListener("click", (event) => {
-    event.preventDefault();
-    activityText.style.opacity = 0;
-    activityText.style.transform = "translateY(10px)";
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      const mood = moodSelect.value;
+      const group = groupSelect.value;
 
-    setTimeout(() => {
-      const random = activities[Math.floor(Math.random() * activities.length)];
-      activityText.textContent = random;
-      activityText.style.opacity = 1;
-      activityText.style.transform = "translateY(0)";
-    }, 300);
-  });
+      let filtered = [];
+
+      if (mood === "any") {
+        // combine all moods
+        Object.values(activities).forEach(type => {
+          if (group === "any") {
+            Object.values(type).forEach(arr => filtered.push(...arr));
+          } else {
+            filtered.push(...type[group]);
+          }
+        });
+      } else {
+        if (group === "any") {
+          Object.values(activities[mood]).forEach(arr => filtered.push(...arr));
+        } else {
+          filtered = activities[mood][group];
+        }
+      }
+
+      const random = filtered[Math.floor(Math.random() * filtered.length)];
+
+      // Animation
+      activityText.style.opacity = 0;
+      activityText.style.transform = "translateY(10px)";
+      setTimeout(() => {
+        activityText.textContent = random || "No activity found 🥲";
+        activityText.style.opacity = 1;
+        activityText.style.transform = "translateY(0)";
+      }, 300);
+    });
   </script>
 
 
