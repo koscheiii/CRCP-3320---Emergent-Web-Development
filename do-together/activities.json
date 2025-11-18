@@ -1,0 +1,17 @@
+{
+  "chill": {
+    "solo": ["Read a book 📖", "Watch a cozy movie 🍿", "Take a walk 🌳"],
+    "couple": ["Cook dinner together 🍝", "Picnic at the park 🌼", "Movie night 🎬"],
+    "friends": ["Board game night 🎲", "Boba run 🧋", "Craft night ✂️"]
+  },
+  "creative": {
+    "solo": ["Paint something 🎨", "Write in your journal 📝", "Edit photos 📸"],
+    "couple": ["DIY art project 🖌️", "Make a playlist 🎧", "Bake cookies 🍪"],
+    "friends": ["Film a TikTok 🎥", "Host a photo challenge 📷", "Make friendship bracelets 💖"]
+  },
+  "energetic": {
+    "solo": ["Dance break 💃", "Go on a jog 🏃‍♀️", "Clean and vibe 🧹"],
+    "couple": ["Mini road trip 🚗", "Go bowling 🎳", "Play Just Dance 🕺"],
+    "friends": ["Karaoke night 🎤", "Outdoor volleyball 🏐", "Amusement park 🎡"]
+  }
+}

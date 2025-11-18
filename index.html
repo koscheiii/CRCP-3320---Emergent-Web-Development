@@ -207,64 +207,37 @@
 
 
   <script>
-    const activities = {
-      chill: {
-        solo: ["Read a book 📖", "Watch a cozy movie 🍿", "Take a walk 🌳"],
-        couple: ["Cook dinner together 🍝", "Picnic at the park 🌼", "Movie night 🎬"],
-        friends: ["Board game night 🎲", "Boba run 🧋", "Craft night ✂️"]
-      },
-      creative: {
-        solo: ["Paint something 🎨", "Write in your journal 📝", "Edit photos 📸"],
-        couple: ["DIY art project 🖌️", "Make a playlist 🎧", "Bake cookies 🍪"],
-        friends: ["Film a TikTok 🎥", "Host a photo challenge 📷", "Make friendship bracelets 💖"]
-      },
-      energetic: {
-        solo: ["Dance break 💃", "Go on a jog 🏃‍♀️", "Clean and vibe 🧹"],
-        couple: ["Mini road trip 🚗", "Go bowling 🎳", "Play Just Dance 🕺"],
-        friends: ["Karaoke night 🎤", "Outdoor volleyball 🏐", "Amusement park 🎡"]
-      }
-    };
 
     const button = document.getElementById("moveButton");
     const activityText = document.getElementById("activity");
     const moodSelect = document.getElementById("mood");
     const groupSelect = document.getElementById("group");
 
-    button.addEventListener("click", (event) => {
+    button.addEventListener("click", async (event) => {
       event.preventDefault();
+
       const mood = moodSelect.value;
       const group = groupSelect.value;
 
-      let filtered = [];
+      try {
+        const response = await fetch(`http://localhost:3000/api/suggestion?mood=${mood}&group=${group}`);
+        const data = await response.json();
 
-      if (mood === "any") {
-        // combine all moods
-        Object.values(activities).forEach(type => {
-          if (group === "any") {
-            Object.values(type).forEach(arr => filtered.push(...arr));
-          } else {
-            filtered.push(...type[group]);
-          }
-        });
-      } else {
-        if (group === "any") {
-          Object.values(activities[mood]).forEach(arr => filtered.push(...arr));
-        } else {
-          filtered = activities[mood][group];
-        }
+        activityText.style.opacity = 0;
+        activityText.style.transform = "translateY(10px)";
+
+        setTimeout(() => {
+          activityText.textContent = data.suggestion;
+          activityText.style.opacity = 1;
+          activityText.style.transform = "translateY(0)";
+        }, 300);
+
+      } catch (err) {
+        activityText.textContent = "Error fetching activity 😢";
       }
-
-      const random = filtered[Math.floor(Math.random() * filtered.length)];
-
-      // Animation
-      activityText.style.opacity = 0;
-      activityText.style.transform = "translateY(10px)";
-      setTimeout(() => {
-        activityText.textContent = random || "No activity found 🥲";
-        activityText.style.opacity = 1;
-        activityText.style.transform = "translateY(0)";
-      }, 300);
     });
+
+
   </script>
 
 
