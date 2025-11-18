@@ -1,46 +1,58 @@
-import express from 'express';
-import cors from 'cors';
-import fs from 'fs';
-import path from 'path';
+import express from "express";
+import cors from "cors";
+import fs from "fs";
 
 const app = express();
 const PORT = 3000;
 
-app.use(cors());
-
-const __dirname = path.resolve();
-const activities = JSON.parse(
-  fs.readFileSync(path.join(__dirname, 'activities.json'), 'utf-8')
+// --- CORS MUST COME BEFORE ANY ROUTES ---
+app.use(
+  cors({
+    origin: [
+      "http://127.0.0.1:5500",
+      "http://localhost:5500",
+      "http://localhost:3000",
+      "http://127.0.0.1:3000",
+      "https://koscheiii.github.io"
+    ]
+  })
 );
 
-app.get('/api/suggestion', (req, res) => {
-  const mood = req.query.mood || 'any';
-  const group = req.query.group || 'any';
+// Allow JSON bodies
+app.use(express.json());
 
-  let filtered = [];
+// Load activities.json
+let activities = [];
+try {
+  const data = fs.readFileSync("./activities.json", "utf8");
+  activities = JSON.parse(data);
+} catch (err) {
+  console.error("Error reading activities.json:", err);
+}
 
-  if (mood === 'any') {
-    Object.values(activities).forEach(type => {
-      if (group === 'any') {
-        Object.values(type).forEach(arr => filtered.push(...arr));
-      } else {
-        filtered.push(...type[group]);
-      }
-    });
-  } else {
-    if (!activities[mood]) return res.json({ suggestion: "No mood found 🥲" });
+// API route
+app.get("/api/suggestion", (req, res) => {
+  const { mood, group } = req.query;
 
-    if (group === 'any') {
-      Object.values(activities[mood]).forEach(arr => filtered.push(...arr));
-    } else {
-      filtered = activities[mood][group];
-    }
+  let filtered = activities;
+
+  if (mood && mood !== "any") {
+    filtered = filtered.filter(a => a.mood === mood);
+  }
+
+  if (group && group !== "any") {
+    filtered = filtered.filter(a => a.group === group);
+  }
+
+  if (filtered.length === 0) {
+    return res.json({ suggestion: "No activities match your filters :(" });
   }
 
   const random = filtered[Math.floor(Math.random() * filtered.length)];
-  res.json({ suggestion: random || "No activity found 🥲" });
+  res.json(random);
 });
 
+// Start server
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });

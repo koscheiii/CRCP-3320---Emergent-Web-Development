@@ -53,6 +53,8 @@
       animation-duration: 8s;
     }
 
+
+
     @keyframes float {
       from { transform: translateY(0px) translateX(0); }
       to { transform: translateY(30px) translateX(20px); }
@@ -213,6 +215,10 @@
     const moodSelect = document.getElementById("mood");
     const groupSelect = document.getElementById("group");
 
+
+
+
+
     button.addEventListener("click", async (event) => {
       event.preventDefault();
 
@@ -227,16 +233,17 @@
         activityText.style.transform = "translateY(10px)";
 
         setTimeout(() => {
-          activityText.textContent = data.suggestion;
-          activityText.style.opacity = 1;
-          activityText.style.transform = "translateY(0)";
-        }, 300);
+        activityText.textContent = data.activity;
+        activityText.style.opacity = 1;
+        activityText.style.transform = "translateY(0)";
+      }, 300);
 
       } catch (err) {
         activityText.textContent = "Error fetching activity 😢";
       }
     });
 
+    
 
   </script>
 

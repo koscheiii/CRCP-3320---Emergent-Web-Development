@@ -1,17 +1,37 @@
-{
-  "chill": {
-    "solo": ["Read a book 📖", "Watch a cozy movie 🍿", "Take a walk 🌳"],
-    "couple": ["Cook dinner together 🍝", "Picnic at the park 🌼", "Movie night 🎬"],
-    "friends": ["Board game night 🎲", "Boba run 🧋", "Craft night ✂️"]
-  },
-  "creative": {
-    "solo": ["Paint something 🎨", "Write in your journal 📝", "Edit photos 📸"],
-    "couple": ["DIY art project 🖌️", "Make a playlist 🎧", "Bake cookies 🍪"],
-    "friends": ["Film a TikTok 🎥", "Host a photo challenge 📷", "Make friendship bracelets 💖"]
-  },
-  "energetic": {
-    "solo": ["Dance break 💃", "Go on a jog 🏃‍♀️", "Clean and vibe 🧹"],
-    "couple": ["Mini road trip 🚗", "Go bowling 🎳", "Play Just Dance 🕺"],
-    "friends": ["Karaoke night 🎤", "Outdoor volleyball 🏐", "Amusement park 🎡"]
-  }
-}
+[
+  { "activity": "Read a book 📖", "mood": "chill", "group": "solo" },
+  { "activity": "Watch a cozy movie 🍿", "mood": "chill", "group": "solo" },
+  { "activity": "Take a walk 🌳", "mood": "chill", "group": "solo" },
+
+  { "activity": "Cook dinner together 🍝", "mood": "chill", "group": "couple" },
+  { "activity": "Picnic at the park 🌼", "mood": "chill", "group": "couple" },
+  { "activity": "Movie night 🎬", "mood": "chill", "group": "couple" },
+
+  { "activity": "Board game night 🎲", "mood": "chill", "group": "friends" },
+  { "activity": "Boba run 🧋", "mood": "chill", "group": "friends" },
+  { "activity": "Craft night ✂️", "mood": "chill", "group": "friends" },
+
+  { "activity": "Paint something 🎨", "mood": "creative", "group": "solo" },
+  { "activity": "Write in your journal 📝", "mood": "creative", "group": "solo" },
+  { "activity": "Edit photos 📸", "mood": "creative", "group": "solo" },
+
+  { "activity": "DIY art project 🖌️", "mood": "creative", "group": "couple" },
+  { "activity": "Make a playlist 🎧", "mood": "creative", "group": "couple" },
+  { "activity": "Bake cookies 🍪", "mood": "creative", "group": "couple" },
+
+  { "activity": "Film a TikTok 🎥", "mood": "creative", "group": "friends" },
+  { "activity": "Host a photo challenge 📷", "mood": "creative", "group": "friends" },
+  { "activity": "Make friendship bracelets 💖", "mood": "creative", "group": "friends" },
+
+  { "activity": "Dance break 💃", "mood": "energetic", "group": "solo" },
+  { "activity": "Go on a jog 🏃‍♀️", "mood": "energetic", "group": "solo" },
+  { "activity": "Clean and vibe 🧹", "mood": "energetic", "group": "solo" },
+
+  { "activity": "Mini road trip 🚗", "mood": "energetic", "group": "couple" },
+  { "activity": "Go bowling 🎳", "mood": "energetic", "group": "couple" },
+  { "activity": "Play Just Dance 🕺", "mood": "energetic", "group": "couple" },
+
+  { "activity": "Karaoke night 🎤", "mood": "energetic", "group": "friends" },
+  { "activity": "Outdoor volleyball 🏐", "mood": "energetic", "group": "friends" },
+  { "activity": "Amusement park 🎡", "mood": "energetic", "group": "friends" }
+]
