@@ -272,8 +272,37 @@
     
   </header>
 
-  <!-- html2canvas for exporting DOM to image -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Dynamic loader for html2canvas -->
+  <script>
+    async function loadHtml2canvas() {
+      if (window.html2canvas) return;
+      const cdns = [
+        'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js',
+        'https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js',
+        'https://unpkg.com/html2canvas@1.4.1/dist/html2canvas.min.js'
+      ];
+
+      for (const src of cdns) {
+        try {
+          await new Promise((resolve, reject) => {
+            const s = document.createElement('script');
+            s.src = src;
+            s.crossOrigin = 'anonymous';
+            s.referrerPolicy = 'no-referrer';
+            s.onload = () => resolve();
+            s.onerror = () => reject(new Error('Failed to load ' + src));
+            document.head.appendChild(s);
+          });
+          if (window.html2canvas) return;
+        } catch (err) {
+          console.warn(err);
+        }
+      }
+      throw new Error('html2canvas could not be loaded from CDNs');
+    }
+
+    loadHtml2canvas().catch(err => console.warn('html2canvas preload failed', err));
+  </script>
 
   <script>
     const moveButton = document.getElementById("moveButton");
@@ -403,6 +432,16 @@
     async function shareFavoritesAsImage() {
       const favEl = document.getElementById('favoritesList');
       if (!favEl) return showMessage('Nothing to share');
+
+      // Ensure html2canvas is loaded (try dynamic loader if not)
+      if (typeof html2canvas === 'undefined') {
+        try {
+          await loadHtml2canvas();
+        } catch (err) {
+          console.error('html2canvas failed to load:', err);
+          return showMessage('Could not load image library');
+        }
+      }
 
       try {
         const canvas = await html2canvas(favEl, {backgroundColor: null, scale: 2});
