@@ -2,7 +2,7 @@ let activities = [];
 let currentActivity = "";
 
 // Load activities.json
-fetch("activities.json")
+fetch("/do-together/activities.json")
   .then(res => res.json())
   .then(data => activities = data);
 
