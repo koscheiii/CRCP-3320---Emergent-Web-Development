@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Do Together</title>
   <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
+    /* General Styles */
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(180deg, #fdf7f1, #ffeef3);
@@ -26,7 +28,7 @@
       to { opacity: 1; }
     }
 
-    /* Floating pastel blob background */
+    /* Floating pastel blobs */
     .blob {
       position: absolute;
       width: 350px;
@@ -39,21 +41,8 @@
       z-index: -1;
     }
 
-    .blob2 {
-      background: #ffc6eb;
-      top: 50%;
-      left: 70%;
-      animation-duration: 7s;
-    }
-
-    .blob3 {
-      background: #ffe9a7;
-      top: 20%;
-      left: -10%;
-      animation-duration: 8s;
-    }
-
-
+    .blob2 { background: #ffc6eb; top: 50%; left: 70%; animation-duration: 7s; }
+    .blob3 { background: #ffe9a7; top: 20%; left: -10%; animation-duration: 8s; }
 
     @keyframes float {
       from { transform: translateY(0px) translateX(0); }
@@ -79,61 +68,66 @@
       margin: 0 auto 30px auto;
     }
 
+    /* Filters */
+    .filters {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: 500;
+      color: #555;
+    }
+
+    select {
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid #ffd1dc;
+      background: #fffafc;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      color: #333;
+      transition: box-shadow 0.3s ease, transform 0.2s ease;
+    }
+
+    select:hover {
+      box-shadow: 0 3px 8px rgba(255, 182, 193, 0.3);
+      transform: scale(1.03);
+    }
+
+    /* Buttons */
     .button-group {
       display: flex;
       gap: 15px;
       justify-content: center;
       flex-wrap: wrap;
-      margin-bottom: 60px;
+      margin-bottom: 20px;
     }
 
-    a.button {
+    a.button, #saveButton {
       text-decoration: none;
       padding: 12px 24px;
       background: #ffd1dc;
       border-radius: 8px;
+      border: none;
       font-size: 1rem;
       color: #333;
       transition: transform 0.25s ease, background 0.2s ease, box-shadow 0.25s ease;
       box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      cursor: pointer;
     }
 
-    a.button:hover {
+    a.button:hover, #saveButton:hover {
       transform: translateY(-6px) scale(1.03);
       background: #ffb6c1;
       box-shadow: 0 8px 16px rgba(0,0,0,0.15);
     }
 
-      .filters {
-        display: flex;
-        gap: 12px;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        margin-bottom: 20px;
-      }
-
-      label {
-        font-weight: 500;
-        color: #555;
-      }
-
-      select {
-        padding: 8px 14px;
-        border-radius: 8px;
-        border: 1px solid #ffd1dc;
-        background: #fffafc;
-        font-family: 'Poppins', sans-serif;
-        font-size: 0.95rem;
-        color: #333;
-        transition: box-shadow 0.3s ease, transform 0.2s ease;
-      }
-
-      select:hover {
-        box-shadow: 0 3px 8px rgba(255, 182, 193, 0.3);
-        transform: scale(1.03);
-      }
-
+    /* Activity display */
     #activity {
       font-size: 1.4rem;
       color: #555;
@@ -151,6 +145,43 @@
       min-height: 40px;
     }
 
+    /* Favorites list */
+    #favoritesList {
+      list-style: none;
+      padding: 0;
+      margin-top: 15px;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #favoritesList li {
+      background: rgba(255, 209, 220, 0.55);
+      border-radius: 20px;
+      margin: 6px;
+      padding: 10px 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      font-weight: 500;
+      color: #333;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      transition: transform 0.4s ease, opacity 0.4s ease;
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .removeBtn {
+      cursor: pointer;
+      color: #ff4d6d;
+      font-weight: bold;
+      transition: transform 0.2s;
+    }
+
+    .removeBtn:hover { transform: scale(1.2); }
+
+    /* Sections */
     section {
       max-width: 700px;
       padding: 20px;
@@ -173,15 +204,17 @@
 </head>
 <body>
 
-  <!-- Animated pastel blobs -->
+  <!-- Floating blobs -->
   <div class="blob" style="top: 10%; left: 10%;"></div>
   <div class="blob blob2"></div>
   <div class="blob blob3"></div>
 
   <header>
     <h1>Do Together</h1>
-    <p class="subtitle">A web app that helps couples, friends, and individuals find fun things to do whether it's together or alone.</p>    
-  
+    <p class="subtitle">
+      A web app that helps couples, friends, and individuals find fun things to do whether it's together or alone.
+    </p>    
+
     <div class="filters">
       <label for="mood">Mood:</label>
       <select id="mood">
@@ -200,73 +233,134 @@
       </select>
     </div>
 
-
     <div class="button-group">
-      <a href="#" class="button" id="moveButton">What's the move?</a>
+      <a href="#" class="button" id="moveButton">what's the move?</a>
+      <button id="saveButton" style="display:none;">❤️ save to favorites</button>
     </div>
-    <p id="activity"></p>  
+
+    <p id="activity"></p>
+    <h2 style="margin-top: 40px; color: #ff8a8a;">the move is...</h2>
+    <ul id="favoritesList" style="list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;"></ul>
+    <ul id="favoritesList"></ul>
+    
   </header>
 
-
   <script>
-
-    const button = document.getElementById("moveButton");
+    const moveButton = document.getElementById("moveButton");
+    const saveButton = document.getElementById("saveButton");
     const activityText = document.getElementById("activity");
+    const favoritesList = document.getElementById("favoritesList");
     const moodSelect = document.getElementById("mood");
     const groupSelect = document.getElementById("group");
 
+    let activities = [];
+    let currentActivity = "";
 
+    // Load activities from JSON
+    async function loadActivities() {
+      try {
+        const res = await fetch("./activities.json");
+        activities = await res.json();
+      } catch (err) {
+        console.error("Failed to load activities.json", err);
+      }
+    }
+    loadActivities();
 
-
-
-    button.addEventListener("click", async (event) => {
+    // Suggest a random activity
+    moveButton.addEventListener("click", (event) => {
       event.preventDefault();
-
       const mood = moodSelect.value;
       const group = groupSelect.value;
 
-      try {
-        const response = await fetch(`http://localhost:3000/api/suggestion?mood=${mood}&group=${group}`);
-        const data = await response.json();
+      let filtered = activities.filter(item =>
+        (mood === "any" || item.mood === mood) &&
+        (group === "any" || item.group === group)
+      );
 
-        activityText.style.opacity = 0;
-        activityText.style.transform = "translateY(10px)";
+      if (filtered.length === 0) {
+        activityText.textContent = "No matching activities 😢";
+        return;
+      }
 
-        setTimeout(() => {
-        activityText.textContent = data.activity;
+      const random = filtered[Math.floor(Math.random() * filtered.length)];
+      currentActivity = random.activity;
+
+      activityText.style.opacity = 0;
+      activityText.style.transform = "translateY(10px)";
+
+      setTimeout(() => {
+        activityText.textContent = currentActivity;
         activityText.style.opacity = 1;
         activityText.style.transform = "translateY(0)";
-      }, 300);
+      }, 200);
 
-      } catch (err) {
-        activityText.textContent = "Error fetching activity 😢";
-      }
+      saveButton.style.display = "inline-block";
     });
 
-    
+    // Save current activity to favorites
+    saveButton.addEventListener("click", () => {
+      if (!currentActivity) return;
 
+      let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+      if (!favorites.includes(currentActivity)) {
+        favorites.push(currentActivity);
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+      }
+
+      renderFavorites();
+    });
+
+    // Render favorites list
+    function renderFavorites() {
+      let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+      favoritesList.innerHTML = "";
+
+      favorites.forEach(activity => {
+        const li = document.createElement("li");
+        li.textContent = activity;
+
+        const removeBtn = document.createElement("span");
+        removeBtn.textContent = "✖";
+        removeBtn.classList.add("removeBtn");
+        removeBtn.onclick = () => removeFavorite(activity);
+
+        li.appendChild(removeBtn);
+        favoritesList.appendChild(li);
+      });
+    }
+
+    // Remove from favorites
+    function removeFavorite(activity) {
+      let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+      favorites = favorites.filter(f => f !== activity);
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+      renderFavorites();
+    }
+
+    // Load favorites on page load
+    renderFavorites();
   </script>
-
-
-
 
   <section id="about-project">
     <h2>About This Project</h2>
     <p>
-      Do Together started as a simple idea: sometimes deciding what to do is harder than doing it. This project will evolve into a full-stack app that generates activity ideas with mood and budget filters, allowing users to save and share favorites.
+      Do Together started as a simple idea: sometimes deciding what to do is harder than doing it. 
+      This project will evolve into a full-stack app that generates activity ideas with mood and budget filters, 
+      allowing users to save and share favorites.
     </p>
   </section>
 
   <section id="about-me">
     <h2>About the Creator</h2>
     <p>
-      Hi! I'm Isabelle, a creative technologist who loves blending design, digital experiences, and everyday life moments. This project is a way for me to explore full-stack development while building something cozy and fun.
+      Hi! I'm Isabelle, a creative technologist who loves blending design, digital experiences, and everyday life moments. 
+      This project is a way for me to explore full-stack development while building something cozy and fun.
     </p>
   </section>
 
   <footer>
     © 2025 Do Together · Built with 🩷
   </footer>
-
 </body>
 </html>

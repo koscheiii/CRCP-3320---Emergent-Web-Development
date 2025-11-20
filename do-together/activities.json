@@ -6,6 +6,8 @@
   { "activity": "Cook dinner together 🍝", "mood": "chill", "group": "couple" },
   { "activity": "Picnic at the park 🌼", "mood": "chill", "group": "couple" },
   { "activity": "Movie night 🎬", "mood": "chill", "group": "couple" },
+  { "activity": "Visit a museum 🖼️", "mood": "chill", "group": "couple" },
+  { "activity": "Go for coffee ☕", "mood": "chill", "group": "couple" },
 
   { "activity": "Board game night 🎲", "mood": "chill", "group": "friends" },
   { "activity": "Boba run 🧋", "mood": "chill", "group": "friends" },
@@ -30,6 +32,7 @@
   { "activity": "Mini road trip 🚗", "mood": "energetic", "group": "couple" },
   { "activity": "Go bowling 🎳", "mood": "energetic", "group": "couple" },
   { "activity": "Play Just Dance 🕺", "mood": "energetic", "group": "couple" },
+  { "activity": "Try a new restaurant 🍣", "mood": "energetic", "group": "couple" },
 
   { "activity": "Karaoke night 🎤", "mood": "energetic", "group": "friends" },
   { "activity": "Outdoor volleyball 🏐", "mood": "energetic", "group": "friends" },
