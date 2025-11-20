@@ -31,26 +31,45 @@
     /* Floating pastel blobs */
     .blob {
       position: absolute;
-      width: 350px;
-      height: 350px;
+      width: 420px;
+      height: 420px;
       background: #ffd1dc;
-      filter: blur(80px);
-      opacity: 0.4;
+      filter: blur(90px);
+      opacity: 0.45;
       border-radius: 50%;
-      animation: float 6s ease-in-out infinite alternate;
-      z-index: -1;
+      animation: float 8s ease-in-out infinite alternate;
+      z-index: 0;
+      will-change: transform, opacity;
+      transform: translateZ(0);
     }
 
-    .blob2 { background: #ffc6eb; top: 50%; left: 70%; animation-duration: 7s; }
-    .blob3 { background: #ffe9a7; top: 20%; left: -10%; animation-duration: 8s; }
+    .blob2 {
+      background: #ffc6eb;
+      top: 50%;
+      left: 70%;
+      animation-duration: 10s;
+      animation-delay: 0.2s;
+      opacity: 0.5;
+    }
+
+    .blob3 {
+      background: #ffe9a7;
+      top: 20%;
+      left: -10%;
+      animation-duration: 12s;
+      animation-delay: 0.6s;
+      opacity: 0.42;
+    }
 
     @keyframes float {
-      from { transform: translateY(0px) translateX(0); }
-      to { transform: translateY(30px) translateX(20px); }
+      from { transform: translate3d(0,0,0) rotate(-6deg); }
+      to { transform: translate3d(40px,80px,0) rotate(6deg); }
     }
 
     header {
       padding: 80px 20px 50px;
+      position: relative;
+      z-index: 2; 
     }
 
     h1 {
@@ -108,7 +127,7 @@
       margin-bottom: 20px;
     }
 
-    a.button, #saveButton {
+    a.button, #saveButton, #shareButton {
       text-decoration: none;
       padding: 12px 24px;
       background: #ffd1dc;
@@ -121,7 +140,7 @@
       cursor: pointer;
     }
 
-    a.button:hover, #saveButton:hover {
+    a.button:hover, #saveButton:hover, #shareButton:hover {
       transform: translateY(-6px) scale(1.03);
       background: #ffb6c1;
       box-shadow: 0 8px 16px rgba(0,0,0,0.15);
@@ -231,11 +250,19 @@
         <option value="couple">Couple</option>
         <option value="friends">Friends</option>
       </select>
+
+      <label for="location">Location:</label>
+      <select id="location">
+        <option value="any">Any</option>
+        <option value="indoor">Indoor</option>
+        <option value="outdoor">Outdoor</option>
+      </select>
     </div>
 
     <div class="button-group">
       <a href="#" class="button" id="moveButton">what's the move?</a>
-      <button id="saveButton" style="display:none;">❤️ save to favorites</button>
+      <button id="saveButton" style="display:none;">save to favorites ❤️</button>
+      <button id="shareButton" style="display:none;">share favorites 📤</button>
     </div>
 
     <p id="activity"></p>
@@ -245,6 +272,9 @@
     
   </header>
 
+  <!-- html2canvas for exporting DOM to image -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNa5Y2g4F7c3+z3K5jB2a6V6x7b3aS9VvG8kq3sK1o6b5cE4p9c6KxY1z8sV2u3l4t5u6w7y8z9a0b1c2d3e4f==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
   <script>
     const moveButton = document.getElementById("moveButton");
     const saveButton = document.getElementById("saveButton");
@@ -252,6 +282,8 @@
     const favoritesList = document.getElementById("favoritesList");
     const moodSelect = document.getElementById("mood");
     const groupSelect = document.getElementById("group");
+  const locationSelect = document.getElementById("location");
+    const shareButton = document.getElementById("shareButton");
 
     let activities = [];
     let currentActivity = "";
@@ -272,10 +304,12 @@
       event.preventDefault();
       const mood = moodSelect.value;
       const group = groupSelect.value;
+      const location = locationSelect ? locationSelect.value : "any";
 
       let filtered = activities.filter(item =>
         (mood === "any" || item.mood === mood) &&
-        (group === "any" || item.group === group)
+        (group === "any" || item.group === group) &&
+        (location === "any" || item.location === location)
       );
 
       if (filtered.length === 0) {
@@ -328,6 +362,11 @@
         li.appendChild(removeBtn);
         favoritesList.appendChild(li);
       });
+
+      // Show or hide share button depending on whether there are favorites
+      if (shareButton) {
+        shareButton.style.display = favorites.length ? 'inline-block' : 'none';
+      }
     }
 
     // Remove from favorites
@@ -340,13 +379,81 @@
 
     // Load favorites on page load
     renderFavorites();
+
+    // Helper message at the top
+    function showMessage(text, timeout = 2200) {
+      const msg = document.createElement('div');
+      msg.textContent = text;
+      msg.style.position = 'fixed';
+      msg.style.top = '18px';
+      msg.style.left = '50%';
+      msg.style.transform = 'translateX(-50%)';
+      msg.style.background = 'rgba(0,0,0,0.75)';
+      msg.style.color = '#fff';
+      msg.style.padding = '8px 14px';
+      msg.style.borderRadius = '999px';
+      msg.style.zIndex = '9999';
+      msg.style.fontSize = '0.95rem';
+      document.body.appendChild(msg);
+      setTimeout(() => msg.style.opacity = '0.01', timeout - 200);
+      setTimeout(() => msg.remove(), timeout);
+    }
+
+    // Share favorites as an image
+    async function shareFavoritesAsImage() {
+      const favEl = document.getElementById('favoritesList');
+      if (!favEl) return showMessage('Nothing to share');
+
+      try {
+        const canvas = await html2canvas(favEl, {backgroundColor: null, scale: 2});
+        return new Promise((resolve) => {
+          canvas.toBlob(async (blob) => {
+            if (!blob) return resolve(showMessage('Failed to generate image'));
+
+            // Try Clipboard API first
+            try {
+              if (navigator.clipboard && window.ClipboardItem) {
+                await navigator.clipboard.write([new ClipboardItem({'image/png': blob})]);
+                showMessage('Favorites copied to clipboard 🎉');
+                return resolve();
+              }
+            } catch (err) {
+              // ignore and fallback to download
+              console.warn('Clipboard copy failed', err);
+            }
+
+            // Fallback: download the image
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'favorites.png';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            URL.revokeObjectURL(url);
+            showMessage('Image downloaded');
+            resolve();
+          }, 'image/png');
+        });
+      } catch (err) {
+        console.error(err);
+        showMessage('Could not capture favorites');
+      }
+    }
+
+    if (shareButton) {
+      shareButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        shareFavoritesAsImage();
+      });
+    }
   </script>
 
   <section id="about-project">
     <h2>About This Project</h2>
     <p>
       Do Together started as a simple idea: sometimes deciding what to do is harder than doing it. 
-      This project will evolve into a full-stack app that generates activity ideas with mood and budget filters, 
+      This project will evolve into web app that generates activity ideas with mood and budget filters, 
       allowing users to save and share favorites.
     </p>
   </section>
@@ -355,7 +462,7 @@
     <h2>About the Creator</h2>
     <p>
       Hi! I'm Isabelle, a creative technologist who loves blending design, digital experiences, and everyday life moments. 
-      This project is a way for me to explore full-stack development while building something cozy and fun.
+      This project is a way for me to explore web app development while building something cozy and fun.
     </p>
   </section>
 

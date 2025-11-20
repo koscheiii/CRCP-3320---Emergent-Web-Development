@@ -17,11 +17,13 @@ moveButton.addEventListener("click", (event) => {
 
   const mood = document.getElementById("mood").value;
   const group = document.getElementById("group").value;
+  const location = (document.getElementById("location") && document.getElementById("location").value) || "any";
 
   let filtered = activities;
 
   if (mood !== "any") filtered = filtered.filter(a => a.mood === mood);
   if (group !== "any") filtered = filtered.filter(a => a.group === group);
+  if (location !== "any") filtered = filtered.filter(a => a.location === location);
 
   if (filtered.length === 0) {
     activityText.textContent = "No activities match your filters 😢";
