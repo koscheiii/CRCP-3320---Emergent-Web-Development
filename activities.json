@@ -2,10 +2,16 @@
   { "activity": "Read a book 📖", "mood": "chill", "group": "solo", "location": "indoor" },
   { "activity": "Watch a cozy movie 🍿", "mood": "chill", "group": "solo", "location": "indoor" },
   { "activity": "Take a walk 🌳", "mood": "chill", "group": "solo", "location": "outdoor" },
+  { "activity": "Do some light stretching 🤸‍♀️", "mood": "chill", "group": "solo", "location": "indoor" },
+  { "activity": "Watch the sunset 🌅", "mood": "chill", "group": "solo", "location": "outdoor" },
   { "activity": "Have a bubble bath 🫧", "mood": "chill", "group": "solo", "location": "indoor" },
   { "activity": "Make a fun drink or cocktail 🍹", "mood": "chill", "group": "solo", "location": "indoor" },
   { "activity": "Meditate or do yoga 🧘‍♀️", "mood": "chill", "group": "solo", "location": "indoor" },
   { "activity": "Listen to an audiobook or podcast 🎧", "mood": "chill", "group": "solo", "location": "indoor" },
+  { "activity": "Gardening 🌿", "mood": "chill", "group": "solo", "location": "outdoor" },
+
+
+
 
   { "activity": "Cook dinner together 🍝", "mood": "chill", "group": "couple", "location": "indoor" },
   { "activity": "Picnic at the park 🌼", "mood": "chill", "group": "couple", "location": "outdoor" },
@@ -19,6 +25,9 @@
   { "activity": "Play Stardew Valley 🐔", "mood": "chill", "group": "couple", "location": "indoor" },
   { "activity": "Bake homemade bread 🍞", "mood": "chill", "group": "couple", "location": "indoor" },
 
+
+
+
   { "activity": "Dinner out 🍽️", "mood": "chill", "group": "friends", "location": "indoor" },
   { "activity": "Beach day 🏖️", "mood": "chill", "group": "friends", "location": "outdoor" },
   { "activity": "Hiking adventure 🥾", "mood": "chill", "group": "friends", "location": "outdoor" },
@@ -30,13 +39,24 @@
   { "activity": "Boba run 🧋", "mood": "chill", "group": "friends", "location": "outdoor" },
   { "activity": "Craft night ✂️", "mood": "chill", "group": "friends", "location": "indoor" },
 
-  { "activity": "Paint something 🎨", "mood": "creative", "group": "solo", "location": "indoor" },
+
+
+
+
+  { "activity": "Take a pottery or painting class 🎨", "mood": "creative", "group": "solo", "location": "outdoor" },
   { "activity": "Write in your journal 📝", "mood": "creative", "group": "solo", "location": "indoor" },
-  { "activity": "Edit photos 📸", "mood": "creative", "group": "solo", "location": "indoor" },
+  { "activity": "Go on an outdoor photography walk 📸", "mood": "creative", "group": "solo", "location": "outdoor" },
   { "activity": "Try a new recipe 🍳", "mood": "creative", "group": "solo", "location": "indoor" },
   { "activity": "Learn a musical instrument 🎸", "mood": "creative", "group": "solo", "location": "indoor" },
   { "activity": "DIY home decor 🏡", "mood": "creative", "group": "solo", "location": "indoor" },
   { "activity": "Take personality tests 👩‍💻", "mood": "creative", "group": "solo", "location": "indoor" },
+  { "activity": "Go to a new coffee shop ☕️", "mood": "creative", "group": "solo", "location": "outdoor" },
+  { "activity": "Go pick out a LEGO set to build 🔧", "mood": "creative", "group": "solo", "location": "outdoor" },
+  { "activity": "Create a vision board 🌟", "mood": "creative", "group": "solo", "location": "indoor" },
+
+
+
+
 
   { "activity": "Couples painting class 🎨", "mood": "creative", "group": "couple", "location": "indoor" },
   { "activity": "Scrapbooking your memories 📒", "mood": "creative", "group": "couple", "location": "indoor" },
@@ -45,11 +65,21 @@
   { "activity": "Bake cookies 🍪", "mood": "creative", "group": "couple", "location": "indoor" },
   { "activity": "Blindfold food tasting session 🍭", "mood": "creative", "group": "couple", "location": "indoor" },
   { "activity": "Play Minecraft 🖥", "mood": "creative", "group": "couple", "location": "indoor" },
+  { "activity": "Build a fort together 🏰", "mood": "creative", "group": "couple", "location": "indoor" },
+
+
 
   { "activity": "Film a TikTok 🎥", "mood": "creative", "group": "friends", "location": "indoor" },
   { "activity": "Host a photo challenge 📷", "mood": "creative", "group": "friends", "location": "indoor" },
   { "activity": "Make friendship bracelets 💖", "mood": "creative", "group": "friends", "location": "indoor" },
   { "activity": "Play mobile games (e.g. heads up, family style) 📱", "mood": "creative", "group": "friends", "location": "indoor" },
+  { "activity": "Go thrifting and pick outfits for each other 🛍", "mood": "creative", "group": "friends", "location": "outdoor" },
+  { "activity": "Go to an esacpe room 🧩", "mood": "creative", "group": "friends", "location": "outdoor" },
+  { "activity": "Go window shopping 👗", "mood": "creative", "group": "friends", "location": "outdoor" } ,
+  { "activity": "Create a group playlist 🎶", "mood": "creative", "group": "friends", "location": "indoor" },
+
+
+
 
   { "activity": "Dance break 💃", "mood": "energetic", "group": "solo", "location": "indoor" },
   { "activity": "Go on a jog 🏃‍♀️", "mood": "energetic", "group": "solo", "location": "outdoor" },
@@ -57,6 +87,13 @@
   { "activity": "Follow a HIIT workout on YouTube 🏋️‍♂️", "mood": "energetic", "group": "solo", "location": "indoor" },
   { "activity": "Try a dance workout on YouTube 🕺", "mood": "energetic", "group": "solo", "location": "indoor" },
   { "activity": "Jump rope session 🔄", "mood": "energetic", "group": "solo", "location": "outdoor" },
+  { "activity": "Take an archery class 🏹", "mood": "energetic", "group": "solo", "location": "outdoor" },
+  { "activity": "Go for a swim 🏊‍♂️", "mood": "energetic", "group": "solo", "location": "outdoor" },
+  { "activity": "Try a new sport (e.g. tennis, badminton) 🎾", "mood": "energetic", "group": "solo", "location": "outdoor" },
+
+  
+  
+  
 
   { "activity": "Mini road trip 🚗", "mood": "energetic", "group": "couple", "location": "outdoor" },
   { "activity": "Go bowling 🎳", "mood": "energetic", "group": "couple", "location": "indoor" },
@@ -67,6 +104,10 @@
   { "activity": "Dance party at home 🎉", "mood": "energetic", "group": "couple", "location": "indoor" },
   { "activity": "Go Kayaking or Canoeing 🚣‍♀️", "mood": "energetic", "group": "couple", "location": "outdoor" },
   { "activity": "Go ice skating ⛸", "mood": "energetic", "group": "couple", "location": "indoor" },
+  { "activity": "Play a sport together (e.g. pickleball, badminton) 🏸", "mood": "energetic", "group": "couple", "location": "outdoor" },
+
+
+
 
   { "activity": "Karaoke night 🎤", "mood": "energetic", "group": "friends", "location": "indoor" },
   { "activity": "Outdoor volleyball 🏐", "mood": "energetic", "group": "friends", "location": "outdoor" },
@@ -75,7 +116,9 @@
   { "activity": "Go to a pilates class 🧘‍♀️", "mood": "energetic", "group": "friends", "location": "indoor" },
   { "activity": "Play laser tag 🔫", "mood": "energetic", "group": "friends", "location": "indoor" },
   { "activity": "Trampoline park 🤸‍♂️", "mood": "energetic", "group": "friends", "location": "indoor" } ,
+  { "activity": "Go bar hopping 🥂", "mood": "energetic", "group": "friends", "location": "indoor" } ,
   { "activity": "Go kart racing 🏎️", "mood": "energetic", "group": "friends", "location": "outdoor" }
+
 
 
 ]

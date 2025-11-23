@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Do Together</title>
-  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Poppins:wght@300;400;600&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
     /* General Styles */
@@ -113,6 +113,18 @@
       transition: box-shadow 0.3s ease, transform 0.2s ease;
     }
 
+    input[type="text"], #usernameInput {
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid #ffd1dc;
+      background: #fffafc;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      color: #333;
+      transition: box-shadow 0.3s ease, transform 0.2s ease;
+      width: 160px;
+    }
+
     select:hover {
       box-shadow: 0 3px 8px rgba(255, 182, 193, 0.3);
       transform: scale(1.03);
@@ -172,6 +184,50 @@
       max-width: 300px;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    /* Export share card */
+    .export-card {
+      font-family: 'Poppins', sans-serif;
+      width: 720px;
+      background: linear-gradient(180deg, #fffafc 0%, #fff 100%);
+      border-radius: 20px;
+      padding: 28px 36px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+      color: #333;
+      display: inline-block;
+      text-align: left;
+    }
+
+    .export-card h3 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 48px;
+      margin: 0 0 6px 0;
+      color: #ff8a8a;
+      letter-spacing: 0.6px;
+    }
+
+    .export-meta {
+      font-size: 13px;
+      color: #8a8a8a;
+      margin-bottom: 12px;
+    }
+
+    .export-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 0 0;
+      display: block;
+    }
+
+    .export-card li {
+      background: linear-gradient(90deg, rgba(255,210,220,0.6), rgba(255,245,230,0.6));
+      padding: 10px 14px;
+      border-radius: 12px;
+      margin-bottom: 8px;
+      font-size: 18px;
+      color: #4a4a4a;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
     }
 
     #favoritesList li {
@@ -257,6 +313,9 @@
         <option value="indoor">Indoor</option>
         <option value="outdoor">Outdoor</option>
       </select>
+
+      <label for="usernameInput">Name:</label>
+      <input id="usernameInput" type="text" placeholder="Your name (optional)">
     </div>
 
     <div class="button-group">
@@ -313,6 +372,7 @@
     const groupSelect = document.getElementById("group");
   const locationSelect = document.getElementById("location");
     const shareButton = document.getElementById("shareButton");
+    const usernameInput = document.getElementById('usernameInput');
 
     let activities = [];
     let currentActivity = "";
@@ -409,6 +469,17 @@
     // Load favorites on page load
     renderFavorites();
 
+    // Prefill username input
+    if (usernameInput) {
+      usernameInput.value = localStorage.getItem('username') || '';
+      usernameInput.addEventListener('input', (e) => {
+        const val = e.target.value.trim();
+        if (val) localStorage.setItem('username', val);
+        else localStorage.removeItem('username');
+        showMessage('Name saved');
+      });
+    }
+
     // Helper message at the top
     function showMessage(text, timeout = 2200) {
       const msg = document.createElement('div');
@@ -433,7 +504,7 @@
       const favEl = document.getElementById('favoritesList');
       if (!favEl) return showMessage('Nothing to share');
 
-      // Ensure html2canvas is loaded (try dynamic loader if not)
+      // Ensure html2canvas is loaded
       if (typeof html2canvas === 'undefined') {
         try {
           await loadHtml2canvas();
@@ -444,7 +515,45 @@
       }
 
       try {
-        const canvas = await html2canvas(favEl, {backgroundColor: null, scale: 2});
+        // cute export card with favorites
+        const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        if (!favorites.length) return showMessage('Nothing to share');
+
+        const exportEl = document.createElement('div');
+        exportEl.className = 'export-card';
+        // keep it off-screen but rendered
+        exportEl.style.position = 'absolute';
+        exportEl.style.left = '-9999px';
+        exportEl.style.top = '0';
+
+  const title = document.createElement('h3');
+  title.textContent = "what's the move?";
+  exportEl.appendChild(title);
+
+  // meta: date and username
+  const meta = document.createElement('div');
+  meta.className = 'export-meta';
+  const date = new Date();
+  const formatted = date.toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });
+  const username = localStorage.getItem('username') || 'You';
+  meta.textContent = `${formatted} • ${username}`;
+  exportEl.appendChild(meta);
+
+  const list = document.createElement('ul');
+        favorites.forEach(act => {
+          const li = document.createElement('li');
+          li.textContent = act;
+          list.appendChild(li);
+        });
+        exportEl.appendChild(list);
+
+        document.body.appendChild(exportEl);
+
+        const canvas = await html2canvas(exportEl, {backgroundColor: null, scale: 2, useCORS: true});
+
+        // remove temporary export element
+        exportEl.remove();
+
         return new Promise((resolve) => {
           canvas.toBlob(async (blob) => {
             if (!blob) return resolve(showMessage('Failed to generate image'));
@@ -492,7 +601,7 @@
     <h2>About This Project</h2>
     <p>
       Do Together started as a simple idea: sometimes deciding what to do is harder than doing it. 
-      This project will evolve into web app that generates activity ideas with mood and budget filters, 
+      This project will evolve into web app that generates activity ideas with mood and group filters, 
       allowing users to save and share favorites.
     </p>
   </section>
