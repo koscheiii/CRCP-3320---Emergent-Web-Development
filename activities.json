@@ -1,123 +1,129 @@
 [
-  { "activity": "Read a book 📖", "mood": "chill", "group": "solo", "location": "indoor" },
-  { "activity": "Watch a cozy movie 🍿", "mood": "chill", "group": "solo", "location": "indoor" },
-  { "activity": "Take a walk 🌳", "mood": "chill", "group": "solo", "location": "outdoor" },
-  { "activity": "Do some light stretching 🤸‍♀️", "mood": "chill", "group": "solo", "location": "indoor" },
-  { "activity": "Watch the sunset 🌅", "mood": "chill", "group": "solo", "location": "outdoor" },
-  { "activity": "Have a bubble bath 🫧", "mood": "chill", "group": "solo", "location": "indoor" },
-  { "activity": "Make a fun drink or cocktail 🍹", "mood": "chill", "group": "solo", "location": "indoor" },
-  { "activity": "Meditate or do yoga 🧘‍♀️", "mood": "chill", "group": "solo", "location": "indoor" },
-  { "activity": "Listen to an audiobook or podcast 🎧", "mood": "chill", "group": "solo", "location": "indoor" },
-  { "activity": "Gardening 🌿", "mood": "chill", "group": "solo", "location": "outdoor" },
+  { "activity": "Read a book 📖", "mood": "chill", "group": "solo", "location": "stay_in" },
+  { "activity": "Watch a cozy movie 🍿", "mood": "chill", "group": "solo", "location": "stay_in" },
+  { "activity": "Take a walk 🌳", "mood": "chill", "group": "solo", "location": "go_out" },
+  { "activity": "Do some light stretching 🤸‍♀️", "mood": "chill", "group": "solo", "location": "stay_in" },
+  { "activity": "Watch the sunset 🌅", "mood": "chill", "group": "solo", "location": "go_out" },
+  { "activity": "Have a bubble bath 🫧", "mood": "chill", "group": "solo", "location": "stay_in" },
+  { "activity": "Make a fun drink or cocktail 🍹", "mood": "chill", "group": "solo", "location": "stay_in" },
+  { "activity": "Meditate or do yoga 🧘‍♀️", "mood": "chill", "group": "solo", "location": "stay_in" },
+  { "activity": "Listen to an audiobook or podcast 🎧", "mood": "chill", "group": "solo", "location": "stay_in" },
+  { "activity": "Gardening 🌿", "mood": "chill", "group": "solo", "location": "go_out" },
 
 
 
 
-  { "activity": "Cook dinner together 🍝", "mood": "chill", "group": "couple", "location": "indoor" },
-  { "activity": "Picnic at the park 🌼", "mood": "chill", "group": "couple", "location": "outdoor" },
-  { "activity": "Movie night 🎬", "mood": "chill", "group": "couple", "location": "indoor" },
-  { "activity": "Visit a museum 🖼️", "mood": "chill", "group": "couple", "location": "indoor" },
-  { "activity": "Go for coffee ☕", "mood": "chill", "group": "couple", "location": "indoor" },
-  { "activity": "Stargazing 🌌", "mood": "chill", "group": "couple", "location": "outdoor" },
-  { "activity": "Spa night 🛀🏻", "mood": "chill", "group": "couple", "location": "indoor" },
-  { "activity": "Go to an Aquarium 🐠", "mood": "chill", "group": "couple", "location": "indoor" },
-  { "activity": "Visit the Zoo 🦁", "mood": "chill", "group": "couple", "location": "outdoor" },
-  { "activity": "Play Stardew Valley 🐔", "mood": "chill", "group": "couple", "location": "indoor" },
-  { "activity": "Bake homemade bread 🍞", "mood": "chill", "group": "couple", "location": "indoor" },
+  { "activity": "Cook dinner together 🍝", "mood": "chill", "group": "couple", "location": "stay_in" },
+  { "activity": "Picnic at the park 🌼", "mood": "chill", "group": "couple", "location": "go_out" },
+  { "activity": "Movie night 🎬", "mood": "chill", "group": "couple", "location": "stay_in" },
+  { "activity": "Visit a museum 🖼️", "mood": "chill", "group": "couple", "location": "go_out" },
+  { "activity": "Go for coffee ☕", "mood": "chill", "group": "couple", "location": "go_out" },
+  { "activity": "Stargazing 🌌", "mood": "chill", "group": "couple", "location": "go_out" },
+  { "activity": "Spa night 🛀🏻", "mood": "chill", "group": "couple", "location": "stay_in" },
+  { "activity": "Go to an Aquarium 🐠", "mood": "chill", "group": "couple", "location": "go_out" },
+  { "activity": "Visit the Zoo 🦁", "mood": "chill", "group": "couple", "location": "go_out" },
+  { "activity": "Play Stardew Valley 🐔", "mood": "chill", "group": "couple", "location": "stay_in" },
+  { "activity": "Bake homemade bread 🍞", "mood": "chill", "group": "couple", "location": "stay_in" },
 
 
 
 
-  { "activity": "Dinner out 🍽️", "mood": "chill", "group": "friends", "location": "indoor" },
-  { "activity": "Beach day 🏖️", "mood": "chill", "group": "friends", "location": "outdoor" },
-  { "activity": "Hiking adventure 🥾", "mood": "chill", "group": "friends", "location": "outdoor" },
-  { "activity": "Coffee shop hangout ☕", "mood": "chill", "group": "friends", "location": "indoor" },
-  { "activity": "Game night 🎮", "mood": "chill", "group": "friends", "location": "indoor" },
-  { "activity": "Potluck dinner 🍲", "mood": "chill", "group": "friends", "location": "indoor" },
-  { "activity": "Movie marathon 🎥", "mood": "chill", "group": "friends", "location": "indoor" },
-  { "activity": "Board game night 🎲", "mood": "chill", "group": "friends", "location": "indoor" },
-  { "activity": "Boba run 🧋", "mood": "chill", "group": "friends", "location": "outdoor" },
-  { "activity": "Craft night ✂️", "mood": "chill", "group": "friends", "location": "indoor" },
-
-
-
-
-
-  { "activity": "Take a pottery or painting class 🎨", "mood": "creative", "group": "solo", "location": "outdoor" },
-  { "activity": "Write in your journal 📝", "mood": "creative", "group": "solo", "location": "indoor" },
-  { "activity": "Go on an outdoor photography walk 📸", "mood": "creative", "group": "solo", "location": "outdoor" },
-  { "activity": "Try a new recipe 🍳", "mood": "creative", "group": "solo", "location": "indoor" },
-  { "activity": "Learn a musical instrument 🎸", "mood": "creative", "group": "solo", "location": "indoor" },
-  { "activity": "DIY home decor 🏡", "mood": "creative", "group": "solo", "location": "indoor" },
-  { "activity": "Take personality tests 👩‍💻", "mood": "creative", "group": "solo", "location": "indoor" },
-  { "activity": "Go to a new coffee shop ☕️", "mood": "creative", "group": "solo", "location": "outdoor" },
-  { "activity": "Go pick out a LEGO set to build 🔧", "mood": "creative", "group": "solo", "location": "outdoor" },
-  { "activity": "Create a vision board 🌟", "mood": "creative", "group": "solo", "location": "indoor" },
+  { "activity": "Dinner out 🍽️", "mood": "chill", "group": "friends", "location": "go_out" },
+  { "activity": "Beach day 🏖️", "mood": "chill", "group": "friends", "location": "go_out" },
+  { "activity": "Hiking adventure 🥾", "mood": "chill", "group": "friends", "location": "go_out" },
+  { "activity": "Coffee shop hangout ☕", "mood": "chill", "group": "friends", "location": "go_out" },
+  { "activity": "Game night 🎮", "mood": "chill", "group": "friends", "location": "stay_in" },
+  { "activity": "Potluck dinner 🍲", "mood": "chill", "group": "friends", "location": "stay_in" },
+  { "activity": "Movie marathon 🎥", "mood": "chill", "group": "friends", "location": "stay_in" },
+  { "activity": "Board game night 🎲", "mood": "chill", "group": "friends", "location": "stay_in" },
+  { "activity": "Boba run 🧋", "mood": "chill", "group": "friends", "location": "go_out" },
+  { "activity": "Craft night ✂️", "mood": "chill", "group": "friends", "location": "stay_in" },
 
 
 
 
 
-  { "activity": "Couples painting class 🎨", "mood": "creative", "group": "couple", "location": "indoor" },
-  { "activity": "Scrapbooking your memories 📒", "mood": "creative", "group": "couple", "location": "indoor" },
-  { "activity": "Make your own pizza night 🍕", "mood": "creative", "group": "couple", "location": "indoor" },
-  { "activity": "Make playlists for each other 🎵", "mood": "creative", "group": "couple", "location": "indoor" },
-  { "activity": "Bake cookies 🍪", "mood": "creative", "group": "couple", "location": "indoor" },
-  { "activity": "Blindfold food tasting session 🍭", "mood": "creative", "group": "couple", "location": "indoor" },
-  { "activity": "Play Minecraft 🖥", "mood": "creative", "group": "couple", "location": "indoor" },
-  { "activity": "Build a fort together 🏰", "mood": "creative", "group": "couple", "location": "indoor" },
-
-
-
-  { "activity": "Film a TikTok 🎥", "mood": "creative", "group": "friends", "location": "indoor" },
-  { "activity": "Host a photo challenge 📷", "mood": "creative", "group": "friends", "location": "indoor" },
-  { "activity": "Make friendship bracelets 💖", "mood": "creative", "group": "friends", "location": "indoor" },
-  { "activity": "Play mobile games (e.g. heads up, family style) 📱", "mood": "creative", "group": "friends", "location": "indoor" },
-  { "activity": "Go thrifting and pick outfits for each other 🛍", "mood": "creative", "group": "friends", "location": "outdoor" },
-  { "activity": "Go to an esacpe room 🧩", "mood": "creative", "group": "friends", "location": "outdoor" },
-  { "activity": "Go window shopping 👗", "mood": "creative", "group": "friends", "location": "outdoor" } ,
-  { "activity": "Create a group playlist 🎶", "mood": "creative", "group": "friends", "location": "indoor" },
+  { "activity": "Take a pottery or painting class 🎨", "mood": "creative", "group": "solo", "location": "go_out" },
+  { "activity": "Write in your journal 📝", "mood": "creative", "group": "solo", "location": "stay_in" },
+  { "activity": "Go on an outdoor photography walk 📸", "mood": "creative", "group": "solo", "location": "go_out" },
+  { "activity": "Try a new recipe 🍳", "mood": "creative", "group": "solo", "location": "stay_in" },
+  { "activity": "Learn a musical instrument 🎸", "mood": "creative", "group": "solo", "location": "stay_in" },
+  { "activity": "DIY home decor 🏡", "mood": "creative", "group": "solo", "location": "stay_in" },
+  { "activity": "Take personality tests 👩‍💻", "mood": "creative", "group": "solo", "location": "stay_in" },
+  { "activity": "Go to a new coffee shop ☕️", "mood": "creative", "group": "solo", "location": "go_out" },
+  { "activity": "Go pick out a LEGO set to build 🔧", "mood": "creative", "group": "solo", "location": "go_out" },
+  { "activity": "Create a vision board 🌟", "mood": "creative", "group": "solo", "location": "stay_in" },
 
 
 
 
-  { "activity": "Dance break 💃", "mood": "energetic", "group": "solo", "location": "indoor" },
-  { "activity": "Go on a jog 🏃‍♀️", "mood": "energetic", "group": "solo", "location": "outdoor" },
-  { "activity": "Clean and vibe 🧹", "mood": "energetic", "group": "solo", "location": "indoor" },
-  { "activity": "Follow a HIIT workout on YouTube 🏋️‍♂️", "mood": "energetic", "group": "solo", "location": "indoor" },
-  { "activity": "Try a dance workout on YouTube 🕺", "mood": "energetic", "group": "solo", "location": "indoor" },
-  { "activity": "Jump rope session 🔄", "mood": "energetic", "group": "solo", "location": "outdoor" },
-  { "activity": "Take an archery class 🏹", "mood": "energetic", "group": "solo", "location": "outdoor" },
-  { "activity": "Go for a swim 🏊‍♂️", "mood": "energetic", "group": "solo", "location": "outdoor" },
-  { "activity": "Try a new sport (e.g. tennis, badminton) 🎾", "mood": "energetic", "group": "solo", "location": "outdoor" },
+
+  { "activity": "Couples painting class 🎨", "mood": "creative", "group": "couple", "location": "go_out" },
+  { "activity": "Scrapbooking your memories 📒", "mood": "creative", "group": "couple", "location": "stay_in" },
+  { "activity": "Make your own pizza night 🍕", "mood": "creative", "group": "couple", "location": "stay_in" },
+  { "activity": "Make playlists for each other 🎵", "mood": "creative", "group": "couple", "location": "stay_in" },
+  { "activity": "Bake cookies 🍪", "mood": "creative", "group": "couple", "location": "stay_in" },
+  { "activity": "Blindfold food tasting session 🍭", "mood": "creative", "group": "couple", "location": "stay_in" },
+  { "activity": "Play Minecraft 🖥", "mood": "creative", "group": "couple", "location": "stay_in" },
+  { "activity": "Build a fort together 🏰", "mood": "creative", "group": "couple", "location": "stay_in" },
+
+
+
+  { "activity": "Film a TikTok 🎥", "mood": "creative", "group": "friends", "location": "stay_in" },
+  { "activity": "Host a photo challenge 📷", "mood": "creative", "group": "friends", "location": "stay_in" },
+  { "activity": "Make friendship bracelets 💖", "mood": "creative", "group": "friends", "location": "stay_in" },
+  { "activity": "Play mobile games (e.g. heads up, family style) 📱", "mood": "creative", "group": "friends", "location": "stay_in" },
+  { "activity": "Create a group playlist 🎶", "mood": "creative", "group": "friends", "location": "stay_in" },
+  { "activity": "Go thrifting and pick outfits for each other 🛍", "mood": "creative", "group": "friends", "location": "go_out" },
+  { "activity": "Go to an escape room 🧩", "mood": "creative", "group": "friends", "location": "go_out" },
+  { "activity": "Go window shopping 👗", "mood": "creative", "group": "friends", "location": "go_out" } ,
+  { "activity": "Visit an art gallery 🖼️", "mood": "creative", "group": "friends", "location": "go_out" },
+
+
+
+
+  
+
+
+
+
+  { "activity": "Dance break 💃", "mood": "energetic", "group": "solo", "location": "stay_in" },
+  { "activity": "Go on a jog 🏃‍♀️", "mood": "energetic", "group": "solo", "location": "go_out" },
+  { "activity": "Clean and vibe 🧹", "mood": "energetic", "group": "solo", "location": "stay_in" },
+  { "activity": "Follow a HIIT workout on YouTube 🏋️‍♂️", "mood": "energetic", "group": "solo", "location": "stay_in" },
+  { "activity": "Try a dance workout on YouTube 🕺", "mood": "energetic", "group": "solo", "location": "stay_in" },
+  { "activity": "Jump rope session 🔄", "mood": "energetic", "group": "solo", "location": "go_out" },
+  { "activity": "Take an archery class 🏹", "mood": "energetic", "group": "solo", "location": "go_out" },
+  { "activity": "Go for a swim 🏊‍♂️", "mood": "energetic", "group": "solo", "location": "go_out" },
+  { "activity": "Try a new sport (e.g. tennis, badminton) 🎾", "mood": "energetic", "group": "solo", "location": "go_out" },
 
   
   
   
 
-  { "activity": "Mini road trip 🚗", "mood": "energetic", "group": "couple", "location": "outdoor" },
-  { "activity": "Go bowling 🎳", "mood": "energetic", "group": "couple", "location": "indoor" },
-  { "activity": "Play Just Dance 🕺", "mood": "energetic", "group": "couple", "location": "indoor" },
-  { "activity": "Try a new restaurant 🍣", "mood": "energetic", "group": "couple", "location": "indoor" },
-  { "activity": "Go for a bike ride 🚴‍♀️", "mood": "energetic", "group": "couple", "location": "outdoor" },
-  { "activity": "Attend a fitness class together 🧘‍♂️", "mood": "energetic", "group": "couple", "location": "indoor" },
-  { "activity": "Dance party at home 🎉", "mood": "energetic", "group": "couple", "location": "indoor" },
-  { "activity": "Go Kayaking or Canoeing 🚣‍♀️", "mood": "energetic", "group": "couple", "location": "outdoor" },
-  { "activity": "Go ice skating ⛸", "mood": "energetic", "group": "couple", "location": "indoor" },
-  { "activity": "Play a sport together (e.g. pickleball, badminton) 🏸", "mood": "energetic", "group": "couple", "location": "outdoor" },
+  { "activity": "Mini road trip 🚗", "mood": "energetic", "group": "couple", "location": "go_out" },
+  { "activity": "Go bowling 🎳", "mood": "energetic", "group": "couple", "location": "go_out" },
+  { "activity": "Play Just Dance 🕺", "mood": "energetic", "group": "couple", "location": "stay_in" },
+  { "activity": "Try a new restaurant 🍣", "mood": "energetic", "group": "couple", "location": "go_out" },
+  { "activity": "Go for a bike ride 🚴‍♀️", "mood": "energetic", "group": "couple", "location": "go_out" },
+  { "activity": "Attend a fitness class together 🧘‍♂️", "mood": "energetic", "group": "couple", "location": "go_out" },
+  { "activity": "Dance party at home 🎉", "mood": "energetic", "group": "couple", "location": "stay_in" },
+  { "activity": "Go Kayaking or Canoeing 🚣‍♀️", "mood": "energetic", "group": "couple", "location": "go_out" },
+  { "activity": "Go ice skating ⛸", "mood": "energetic", "group": "couple", "location": "go_out" },
+  { "activity": "Play a sport together (e.g. pickleball, badminton) 🏸", "mood": "energetic", "group": "couple", "location": "go_out" },
 
 
 
 
-  { "activity": "Karaoke night 🎤", "mood": "energetic", "group": "friends", "location": "indoor" },
-  { "activity": "Outdoor volleyball 🏐", "mood": "energetic", "group": "friends", "location": "outdoor" },
-  { "activity": "Amusement park 🎡", "mood": "energetic", "group": "friends", "location": "outdoor" },
-  { "activity": "Go rock climbing 🧗‍♀️", "mood": "energetic", "group": "friends", "location": "outdoor" },
-  { "activity": "Go to a pilates class 🧘‍♀️", "mood": "energetic", "group": "friends", "location": "indoor" },
-  { "activity": "Play laser tag 🔫", "mood": "energetic", "group": "friends", "location": "indoor" },
-  { "activity": "Trampoline park 🤸‍♂️", "mood": "energetic", "group": "friends", "location": "indoor" } ,
+  { "activity": "Karaoke night 🎤", "mood": "energetic", "group": "friends", "location": "go_out" },
+  { "activity": "Outdoor volleyball 🏐", "mood": "energetic", "group": "friends", "location": "go_out" },
+  { "activity": "Amusement park 🎡", "mood": "energetic", "group": "friends", "location": "go_out" },
+  { "activity": "Go rock climbing 🧗‍♀️", "mood": "energetic", "group": "friends", "location": "go_out" },
+  { "activity": "Go to a pilates class 🧘‍♀️", "mood": "energetic", "group": "friends", "location": "go_out" },
+  { "activity": "Play laser tag 🔫", "mood": "energetic", "group": "friends", "location": "go_out" },
+  { "activity": "Trampoline park 🤸‍♂️", "mood": "energetic", "group": "friends", "location": "go_out" } ,
   { "activity": "Go bar hopping 🥂", "mood": "energetic", "group": "friends", "location": "indoor" } ,
-  { "activity": "Go kart racing 🏎️", "mood": "energetic", "group": "friends", "location": "outdoor" }
+  { "activity": "Go kart racing 🏎️", "mood": "energetic", "group": "friends", "location": "go_out" }
 
 
 
