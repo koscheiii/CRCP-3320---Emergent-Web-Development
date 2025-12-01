@@ -57,8 +57,6 @@
 
 
 
-
-  { "activity": "Couples painting class 🎨", "mood": "creative", "group": "couple", "location": "go_out" },
   { "activity": "Scrapbooking your memories 📒", "mood": "creative", "group": "couple", "location": "stay_in" },
   { "activity": "Make your own pizza night 🍕", "mood": "creative", "group": "couple", "location": "stay_in" },
   { "activity": "Make playlists for each other 🎵", "mood": "creative", "group": "couple", "location": "stay_in" },
@@ -66,6 +64,13 @@
   { "activity": "Blindfold food tasting session 🍭", "mood": "creative", "group": "couple", "location": "stay_in" },
   { "activity": "Play Minecraft 🖥", "mood": "creative", "group": "couple", "location": "stay_in" },
   { "activity": "Build a fort together 🏰", "mood": "creative", "group": "couple", "location": "stay_in" },
+  { "activity": "Couples painting class 🎨", "mood": "creative", "group": "couple", "location": "go_out" },
+  { "activity": "Visit a botanical garden 🌺", "mood": "creative", "group": "couple", "location": "go_out" },
+  { "activity": "Attend a cooking class 🍳", "mood": "creative", "group": "couple", "location": "go_out" },
+  { "activity": "Go to a pottery painting studio 🏺", "mood": "creative", "group": "couple", "location": "go_out" },
+
+
+
 
 
 
@@ -80,9 +85,6 @@
   { "activity": "Visit an art gallery 🖼️", "mood": "creative", "group": "friends", "location": "go_out" },
 
 
-
-
-  
 
 
 
@@ -121,8 +123,12 @@
   { "activity": "Go rock climbing 🧗‍♀️", "mood": "energetic", "group": "friends", "location": "go_out" },
   { "activity": "Go to a pilates class 🧘‍♀️", "mood": "energetic", "group": "friends", "location": "go_out" },
   { "activity": "Play laser tag 🔫", "mood": "energetic", "group": "friends", "location": "go_out" },
-  { "activity": "Trampoline park 🤸‍♂️", "mood": "energetic", "group": "friends", "location": "go_out" } ,
-  { "activity": "Go bar hopping 🥂", "mood": "energetic", "group": "friends", "location": "indoor" } ,
+  { "activity": "Trampoline park 🤸‍♂️", "mood": "energetic", "group": "friends", "location": "go_out" },
+  { "activity": "Go bar hopping 🥂", "mood": "energetic", "group": "friends", "location": "go_out" },
+  { "activity": "Attend a live concert 🎸", "mood": "energetic", "group": "friends", "location": "go_out" },
+  { "activity": "Steak and wine night 🍷", "mood": "energetic", "group": "friends", "location": "stay_in" },
+  { "activity": "Blindfold makeup challenge 💅", "mood": "energetic", "group": "friends", "location": "stay_in" },
+  { "activity": "Bake something together 🧁", "mood": "energetic", "group": "friends", "location": "stay_in" },
   { "activity": "Go kart racing 🏎️", "mood": "energetic", "group": "friends", "location": "go_out" }
 
 
